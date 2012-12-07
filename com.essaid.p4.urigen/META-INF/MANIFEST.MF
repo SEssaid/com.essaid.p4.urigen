@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Urigen
+Bundle-SymbolicName: com.essaid.p4.urigen
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: ESSAID
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
