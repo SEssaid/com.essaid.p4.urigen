@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         id="com.essaid.p4.urigen.prefpanel"
+         point="org.protege.editor.core.application.preferencespanel">
+      <label
+            value="URiGEN Server">
+      </label>
+      <class
+            value="com.essaid.p4.urigen.prefs.ui.PrefsPanel">
+      </class>
+   </extension>
+      <extension id="com.essaid.p4.urigen.menu"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+       <name value="URiGEN"/>
+       <toolTip value=""/>
+       <path value="/SlotZ-B"/>
+       <editorKitId value="any"/>
+       <dynamic
+             value="false">
+       </dynamic>
+       <class
+             value="com.essaid.p4.urigen.menu.TopMenu">
+       </class>
+       <checkbox
+       value="true">
+       </checkbox>
+   </extension>
+      <extension id="com.essaid.p4.urigen.menu.active"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+       <name value="Active"/>
+       <toolTip value=""/>
+       <path value="com.essaid.p4.urigen.menu/SlotA-A"/>
+       <editorKitId value="any"/>
+       <dynamic
+             value="false">
+       </dynamic>
+       <class
+             value="com.essaid.p4.urigen.menu.action.ActiveAction">
+       </class>
+       <checkbox
+       value="true">
+       </checkbox>
+   </extension>
+      <extension id="com.essaid.p4.urigen.menu.follow"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+       <name value="Follow annotation"/>
+       <toolTip value=""/>
+       <path value="com.essaid.p4.urigen.menu/SlotA-B"/>
+       <editorKitId value="any"/>
+       <dynamic
+             value="false">
+       </dynamic>
+       <class
+             value="com.essaid.p4.urigen.menu.action.FollowAction">
+       </class>
+       <checkbox
+       value="true">
+       </checkbox>
+   </extension>
+      <extension id="com.essaid.p4.urigen.menu.generators"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+       <name value="Generators"/>
+       <toolTip value=""/>
+       <path value="com.essaid.p4.urigen.menu/SlotA-C"/>
+       <editorKitId value="any"/>
+       <dynamic
+             value="true">
+       </dynamic>
+       <class
+             value="com.essaid.p4.urigen.menu.action.GeneratorAction">
+       </class>
+       <checkbox
+       value="false">
+       </checkbox>
+   </extension>
+      <extension id="com.essaid.p4.urigen.menu.rename"
+               point="org.protege.editor.core.application.EditorKitMenuAction">
+       <name value="Rename current"/>
+       <toolTip value=""/>
+       <path value="com.essaid.p4.urigen.menu/SlotA-D"/>
+       <editorKitId value="any"/>
+       <dynamic
+             value="false">
+       </dynamic>
+       <class
+             value="com.essaid.p4.urigen.menu.action.RenameAction">
+       </class>
+       <checkbox
+       value="false">
+       </checkbox>
+   </extension>
+      <extension
+            id="com.essaid.p4.urigen.kithook"
+            point="org.protege.editor.core.application.EditorKitHook">
+         <class
+               value="com.essaid.p4.urigen.menu.TopMenu">
+         </class>
+         <editorKitId
+               value="OWLEditorKit">
+         </editorKitId>
+      </extension>
+
+</plugin>
