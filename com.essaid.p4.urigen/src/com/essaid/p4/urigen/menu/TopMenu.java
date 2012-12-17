@@ -96,7 +96,7 @@ public class TopMenu extends OWLEditorKitHook {
 
 			@Override
 			public void handleChange(OWLModelManagerChangeEvent event) {
-				log.info("OWLModel event: {}", event.getType());
+//				log.info("OWLModel event: {}", event.getType());
 
 				if (event.getType() == EventType.ACTIVE_ONTOLOGY_CHANGED) {
 					serverUrl = null;
@@ -116,10 +116,10 @@ public class TopMenu extends OWLEditorKitHook {
 						}
 					}
 
+					
+					MenuManager.INSTANCE().getEntityFactory(getEditorKit())
+					.setNeedsUpdate(true);
 				}
-
-				MenuManager.INSTANCE().getEntityFactory(getEditorKit())
-						.setNeedsUpdate(true);
 			}
 		};
 
