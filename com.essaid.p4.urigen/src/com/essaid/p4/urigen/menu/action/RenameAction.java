@@ -13,6 +13,7 @@ import org.protege.editor.owl.model.entity.OWLEntityCreationSet;
 import org.protege.editor.owl.model.selection.OWLSelectionModel;
 import org.semanticweb.owlapi.model.IRI;
 import org.semanticweb.owlapi.model.OWLAnnotation;
+import org.semanticweb.owlapi.model.OWLAnnotationProperty;
 import org.semanticweb.owlapi.model.OWLEntity;
 import org.semanticweb.owlapi.model.OWLLiteral;
 import org.semanticweb.owlapi.model.OWLOntology;
@@ -58,12 +59,9 @@ public class RenameAction extends ProtegeAction {
 		List<String> names = new ArrayList<String>();
 		for (OWLOntology o : ontologies) {
 			for (OWLAnnotation a : entity.getAnnotations(o)) {
-				if (a.getProperty()
-						.getIRI()
-						.toString()
-						.equals(OWLRDFVocabulary.RDFS_LABEL.getIRI().toString()))
-					;
-				{
+				OWLAnnotationProperty ap = a.getProperty();
+				IRI rdfslabel = OWLRDFVocabulary.RDFS_LABEL.getIRI();
+				if (ap.getIRI().toString().equals(rdfslabel.toString())) {
 					names.add(((OWLLiteral) a.getValue()).getLiteral());
 				}
 			}
